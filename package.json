@@ -1,0 +1,28 @@
+{
+  "name": "koa-path-canonicalizer",
+  "version": "0.1.0",
+  "description": "A Koa middleware to redirect to canonicalized path",
+  "main": "index.js",
+  "repository": "https://github.com/herp-inc/koa-path-canonicalizer.git",
+  "author": "Ryota Kameoka <ryota.kameoka@herp.co.jp>",
+  "license": "MIT",
+  "typings": "index.d.ts",
+  "devDependencies": {
+    "@types/jest": "^23.3.4",
+    "@types/koa": "^2.0.46",
+    "@types/node": "^10.11.5",
+    "@types/supertest": "^2.0.6",
+    "jest": "^23.6.0",
+    "koa": "^2.5.3",
+    "prettier": "^1.14.3",
+    "supertest": "^3.3.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.1"
+  },
+  "scripts": {
+    "prerelease": "./bin/prerelease.sh",
+    "prettier:check": "prettier --list-different src/**/*.ts",
+    "prettier:format": "prettier --write src/**/*.ts",
+    "test": "jest"
+  }
+}
