@@ -1,0 +1,25 @@
+name: CI
+on:
+  pull_request:
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: yarn
+          node-version: lts/*
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+      - name: Run Prettier
+        run: |
+          yarn prettier:check
+      - name: Build
+        run: |
+          yarn tsc --noEmit
+      - name: Run tests
+        run: |
+          yarn test
